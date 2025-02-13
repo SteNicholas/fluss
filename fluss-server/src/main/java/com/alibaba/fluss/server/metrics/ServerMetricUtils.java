@@ -44,9 +44,13 @@ import java.lang.management.GarbageCollectorMXBean;
 import java.lang.management.ManagementFactory;
 import java.lang.management.MemoryPoolMXBean;
 import java.lang.management.MemoryUsage;
+import java.lang.management.ThreadInfo;
 import java.lang.management.ThreadMXBean;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
@@ -65,8 +69,11 @@ public class ServerMetricUtils {
     static final String MEMORY_USED = "used";
     static final String MEMORY_COMMITTED = "committed";
     static final String MEMORY_MAX = "max";
-
-    @VisibleForTesting static final String METRIC_GROUP_MEMORY = "memory";
+    static final String THREAD_COUNT = "count";
+    static final String THREAD_DAEMON_COUNT = "daemonCount";
+    static final String THREAD_PEAK_COUNT = "peakCount";
+    static final String THREAD_TOTAL_STARTED_COUNT = "totalStartedCount";
+    static final String THREAD_DEADLOCK_COUNT = "deadlockCount";
 
     public static CoordinatorMetricGroup createCoordinatorGroup(
             MetricRegistry registry, String clusterId, String hostname, String serverId) {
@@ -103,7 +110,7 @@ public class ServerMetricUtils {
         instantiateClassLoaderMetrics(jvm.addGroup("classLoader"));
         instantiateGarbageCollectorMetrics(
                 jvm.addGroup("GC"), ManagementFactory.getGarbageCollectorMXBeans());
-        instantiateMemoryMetrics(jvm.addGroup(METRIC_GROUP_MEMORY));
+        instantiateMemoryMetrics(jvm.addGroup("memory"));
         instantiateThreadMetrics(jvm.addGroup("threads"));
         instantiateCPUMetrics(jvm.addGroup("CPU"));
     }
@@ -217,9 +224,16 @@ public class ServerMetricUtils {
         metricGroup.<Long, Gauge<Long>>gauge(MEMORY_MAX, () -> memoryUsageSupplier.get().getMax());
     }
 
-    private static void instantiateThreadMetrics(MetricGroup metrics) {
+    @VisibleForTesting
+    static void instantiateThreadMetrics(MetricGroup metrics) {
         final ThreadMXBean mxBean = ManagementFactory.getThreadMXBean();
-        metrics.<Integer, Gauge<Integer>>gauge("count", mxBean::getThreadCount);
+        metrics.<Integer, Gauge<Integer>>gauge(THREAD_COUNT, mxBean::getThreadCount);
+        metrics.<Integer, Gauge<Integer>>gauge(THREAD_DAEMON_COUNT, mxBean::getDaemonThreadCount);
+        metrics.<Integer, Gauge<Integer>>gauge(THREAD_PEAK_COUNT, mxBean::getPeakThreadCount);
+        metrics.<Long, Gauge<Long>>gauge(
+                THREAD_TOTAL_STARTED_COUNT, mxBean::getTotalStartedThreadCount);
+        metrics.<Integer, Gauge<Integer>>gauge(
+                THREAD_DEADLOCK_COUNT, () -> getDeadlockedThreads(mxBean).size());
     }
 
     private static void instantiateCPUMetrics(MetricGroup metrics) {
@@ -235,6 +249,38 @@ public class ServerMetricUtils {
                             + " - CPU load metrics will not be available.",
                     e);
         }
+    }
+
+    /**
+     * Returns a set of diagnostic stack traces for any deadlocked threads. If no threads are
+     * deadlocked, returns an empty set.
+     *
+     * @return stack traces for deadlocked threads or an empty set
+     */
+    private static Set<String> getDeadlockedThreads(ThreadMXBean threadMXBean) {
+        final long[] ids = threadMXBean.findDeadlockedThreads();
+        if (ids != null) {
+            final Set<String> deadlocks = new HashSet<>();
+            for (ThreadInfo info : threadMXBean.getThreadInfo(ids, Integer.MAX_VALUE)) {
+                final StringBuilder stackTrace = new StringBuilder();
+                for (StackTraceElement element : info.getStackTrace()) {
+                    stackTrace
+                            .append("\t at ")
+                            .append(element.toString())
+                            .append(String.format("%n"));
+                }
+
+                deadlocks.add(
+                        String.format(
+                                "%s locked on %s (owned by %s):%n%s",
+                                info.getThreadName(),
+                                info.getLockName(),
+                                info.getLockOwnerName(),
+                                stackTrace));
+            }
+            return Collections.unmodifiableSet(deadlocks);
+        }
+        return Collections.emptySet();
     }
 
     private static final class AttributeGauge<T> implements Gauge<T> {
