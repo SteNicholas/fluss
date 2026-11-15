@@ -1,0 +1,35 @@
+fluss-server/src/test/java/org/apache/fluss/server/metadata/TabletServerMetadataCacheTest.java
+  s_ef9ef00a55c2a1::t_0aee85efc2984a 349,356,658-668
+  s_ef9ef00a55c2a1::t_21e79cd345a2b3 768-777
+  s_ef9ef00a55c2a1::t_b370dc29415042 845
+  s_ef9ef00a55c2a1::t_e867e708be829a 358,404,652-654,669-672,674-684,687-756,760,762,764-767,778-789,794-798,802-806,808,810-821,823-843,847-854,1238-1243
+  s_ef9ef00a55c2a1::t_111d2a8d2565b3 355
+  s_ef9ef00a55c2a1::t_b433183ee7ea94 357
+  s_ef9ef00a55c2a1::t_18527aecf51838 359-360
+  s_ef9ef00a55c2a1::t_439cd57f73a4f4 405-407
+  s_ef9ef00a55c2a1::t_fb4fb6c046e2cf 844
+  s_ef9ef00a55c2a1::t_a5fd98ce11a4c2 846
+  s_ef9ef00a55c2a1::t_7015e45bbcf481 1244
+fluss-server/src/main/java/org/apache/fluss/server/metadata/TabletServerMetadataCache.java
+  s_ef9ef00a55c2a1::t_41a08ffeacbd5e 217-221,226,248-251,295,303,310,313-318,344,371-375,396,402,408-411,522-523,543-551,559,574,631-632,635-639,697-719
+  s_ef9ef00a55c2a1::t_375a0ef6bb83d0 585-586,594-595,720
+  s_ef9ef00a55c2a1::t_21e79cd345a2b3 403-404,581-584,587-593
+  s_ef9ef00a55c2a1::t_e1aa0c82749d58 405-407
+  s_ef9ef00a55c2a1::t_ce64d84b3dc754 721
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e6c98c413dd9ba7450477ae9a3126d0cbaa33fbc",
+  "prompts": {},
+  "sessions": {
+    "s_ef9ef00a55c2a1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1dd65-7725-75d1-8f29-85c0aa983194",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nicholas Jiang <nicholasjiang@apache.org>"
+    }
+  }
+}
