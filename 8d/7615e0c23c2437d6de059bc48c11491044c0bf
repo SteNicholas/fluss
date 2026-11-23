@@ -1,0 +1,118 @@
+fluss-common/src/main/java/org/apache/fluss/record/LogRecordReadContext.java
+  s_06d0a7e0886193::t_ec5e37f6e7487d 340-345,349-352
+  s_06d0a7e0886193::t_aa9f61be1886cf 346-348
+fluss-common/src/test/java/org/apache/fluss/exception/LogDecodeExceptionTest.java
+  s_06d0a7e0886193::t_4c56d3c775284e 1-61
+fluss-rust/crates/fluss/src/record/log_record_batch.rs
+  s_06d0a7e0886193::t_67e90c3176eda6 419-422
+  s_06d0a7e0886193::t_4c56d3c775284e 591-600,842-843
+  s_06d0a7e0886193::t_addff602a1a630 414-418,423-427
+fluss-client/src/main/java/org/apache/fluss/client/table/scanner/log/TypedLogScanner.java
+  s_06d0a7e0886193::t_4c56d3c775284e 38-41
+fluss-rust/website/docs/user-guide/rust/error-handling.md
+  s_06d0a7e0886193::t_4c56d3c775284e 58,216-219,223-241
+  s_06d0a7e0886193::t_addff602a1a630 222
+  s_7abd7af80cfd47::t_81b591d7f84cbe 242-244
+  s_06d0a7e0886193::t_60e5dd14b4f1cd 220-221
+fluss-client/src/main/java/org/apache/fluss/client/table/scanner/log/LogScanner.java
+  s_06d0a7e0886193::t_4c56d3c775284e 56-59
+fluss-common/src/main/java/org/apache/fluss/exception/LogDecodeException.java
+  s_06d0a7e0886193::t_addff602a1a630 107-110
+  s_06d0a7e0886193::t_32b936e715a91e 100
+  s_06d0a7e0886193::t_4c56d3c775284e 1-99,101-106,111-115
+fluss-rust/crates/fluss/src/test_utils.rs
+  s_06d0a7e0886193::t_4c56d3c775284e 36-38,291-321,325-331
+fluss-rust/crates/fluss/src/client/table/scanner.rs
+  s_06d0a7e0886193::t_242724f7cb3588 3416-3420,3424-3434,3448-3449,3469-3483
+  s_06d0a7e0886193::t_bda4a4c44d3d2d 3390-3397,3399-3406,3410-3415,3421-3423,3435-3447,3450-3453,3455-3457,3459-3461,3463-3468,3484
+  s_06d0a7e0886193::t_a444be91de878c 3398,3407-3409,3454
+  s_06d0a7e0886193::t_53c9aade580204 3462
+  s_06d0a7e0886193::t_4c56d3c775284e 1150-1151,1203-1204,2906-2914,2920-2928
+website/docs/apis/java/index.md
+  s_06d0a7e0886193::t_32b936e715a91e 297-300
+  s_06d0a7e0886193::t_addff602a1a630 301-304
+  s_06d0a7e0886193::t_4c56d3c775284e 285-296,305-324
+fluss-client/src/test/java/org/apache/fluss/client/table/scanner/log/RemoteCompletedFetchTest.java
+  s_06d0a7e0886193::t_4c56d3c775284e 23,181-187
+  s_06d0a7e0886193::t_1c59d74115d1c0 54,63,238-269
+  s_7abd7af80cfd47::t_bb1e2a2e4e2fc3 270-271
+fluss-client/src/main/java/org/apache/fluss/client/table/scanner/log/CompletedFetch.java
+  s_06d0a7e0886193::t_7b30abfbd4609f 46,208,370,434
+  s_06d0a7e0886193::t_aa9f61be1886cf 116,428-429,515
+  s_06d0a7e0886193::t_cc890a18562fc3 117,516
+  s_06d0a7e0886193::t_4c56d3c775284e 22,25,51,54,436,474-484,503-514,517-520,527
+  s_06d0a7e0886193::t_ec5e37f6e7487d 24,85,135-140,142-152,236-237,263,265,309,326-331,361,363,372-382,384,386-390,394,396-397,404-410,415-427,430-433,435,437-446,450-451,455,461-473
+  s_06d0a7e0886193::t_ded6aefdebc642 325,391-393
+  s_06d0a7e0886193::t_addff602a1a630 447-449,452-454,456-460
+fluss-rust/crates/fluss/src/client/table/log_fetch_buffer.rs
+  s_06d0a7e0886193::t_2eae1c3b51e124 780
+  s_06d0a7e0886193::t_5a08e9216e7b12 1306-1307,1383,1421-1424,1436,1438,1440-1447,1449-1452,1455-1461,1570-1576,1587-1588
+  s_7abd7af80cfd47::t_8e80715d9b24b3 1396,1425
+  s_06d0a7e0886193::t_0afa8c669fdacc 1427-1430,1432-1434
+  s_06d0a7e0886193::t_7b30abfbd4609f 405,408,602,665-673,726,761,764-775
+  s_06d0a7e0886193::t_bd6270b949d68c 1231,1310,1346-1347,1352,1356,1359-1360,1364,1368,1381,1384-1394,1397-1399,1402,1405,1420,1431,1435,1437,1439,1448,1453-1454,1465
+  s_06d0a7e0886193::t_2f3104db6e6494 1463-1464
+  s_06d0a7e0886193::t_1c59d74115d1c0 1258,1265,1267-1268,1274-1279,1284,1292-1294,1305
+  s_06d0a7e0886193::t_242724f7cb3588 1211-1212,1496-1502,1560
+  s_06d0a7e0886193::t_4c56d3c775284e 388-404,406-407,409-412,445,565,600-601,603,629-630,656-664,674-681,683-694,697,699-701,858-861,905-908,920-921,942-944,946,1309,1325,1330-1345,1348-1351,1353-1355,1357-1358,1361-1363,1365-1367,1369-1374,1382,1395,1401,1403-1404,1413-1415,1426,1462
+  s_06d0a7e0886193::t_3b0519b8ab8c5b 724-725,1203-1204,1505-1507
+  s_06d0a7e0886193::t_addff602a1a630 776-779,781-785
+  s_06d0a7e0886193::t_67e90c3176eda6 1205-1206,1375-1380,1406-1412,1416-1419
+  s_06d0a7e0886193::t_d8fd7f08e8c1e3 757,759-760,762-763,1400
+  s_06d0a7e0886193::t_80ad2c86370e08 1259-1264,1280-1283,1285-1291,1295-1304
+  s_7abd7af80cfd47::t_2ee3fc9df3d65a 1308
+fluss-rust/crates/fluss/src/error.rs
+  s_06d0a7e0886193::t_32b936e715a91e 156-157
+  s_06d0a7e0886193::t_addff602a1a630 160-163
+  s_06d0a7e0886193::t_4c56d3c775284e 21,24,139-155,158-159,164-166
+fluss-client/src/main/java/org/apache/fluss/client/table/scanner/log/MultiTableLogScanner.java
+  s_06d0a7e0886193::t_4c56d3c775284e 65-68
+website/docs/maintenance/operations/upgrade-notes-1.1.md
+  s_06d0a7e0886193::t_32b936e715a91e 63-74
+fluss-client/src/test/java/org/apache/fluss/client/table/scanner/log/LogScannerImplTest.java
+  s_06d0a7e0886193::t_80ad2c86370e08 116-117
+  s_06d0a7e0886193::t_1c59d74115d1c0 71-72,115,118-125
+  s_06d0a7e0886193::t_47beadc10a058d 39,81-82,85-86,132,134-140,213
+  s_06d0a7e0886193::t_4c56d3c775284e 1-38,40-70,73-80,83-84,87-114,126-131,133,141-212,214-222
+fluss-client/src/test/java/org/apache/fluss/client/table/scanner/log/DefaultCompletedFetchTest.java
+  s_06d0a7e0886193::t_1dcc9bca3e3537 346-348,352-374
+  s_06d0a7e0886193::t_e4b094e063ab67 58,233,246,257-262,264-265
+  s_06d0a7e0886193::t_aea64bc3e34515 138
+  s_06d0a7e0886193::t_6a62e956c390a7 680
+  s_06d0a7e0886193::t_aa9f61be1886cf 284,695-696,723
+  s_06d0a7e0886193::t_2e02b80e6bd719 21,73,251-252,256,287,682-685,710-712,719
+  s_06d0a7e0886193::t_a444be91de878c 23,52,102-105,127-136,241,266-277,304-310,338-345,349-351,375-390,661-678
+  s_06d0a7e0886193::t_4c56d3c775284e 22,24,31,50,62-64,76-77,80-86,98,137,232,248-250,254-255,278-283,285-286,288-303,311-337,391-392,652-660,679,681,686-694,697-709,713,717-718,721-722,724-749,755
+  s_06d0a7e0886193::t_77b5313b8f2b38 234-240,242-245,247,253,263,714-716,720,750-754
+website/docs/apis/rust/error-handling.md
+  s_06d0a7e0886193::t_4c56d3c775284e 58,212-215,219-237
+  s_06d0a7e0886193::t_60e5dd14b4f1cd 216-217
+  s_7abd7af80cfd47::t_4a16ea21ba7fc8 238-240
+  s_06d0a7e0886193::t_addff602a1a630 218
+fluss-rust/crates/fluss/src/client/table/read_context_resolver.rs
+  s_06d0a7e0886193::t_7b30abfbd4609f 105-109
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "8d7615e0c23c2437d6de059bc48c11491044c0bf",
+  "prompts": {},
+  "sessions": {
+    "s_06d0a7e0886193": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a20959-b1db-7613-856f-1f3bfef5ac35",
+        "model": "gpt-6.2-sol"
+      },
+      "human_author": null
+    },
+    "s_7abd7af80cfd47": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a2095a-a1dc-77c1-ae6f-c3ce6384bfc0",
+        "model": "gpt-6.2-sol"
+      },
+      "human_author": "子懿 <ziyi.jxf@antgroup.com>"
+    }
+  }
+}
